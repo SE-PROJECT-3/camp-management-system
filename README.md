@@ -37,7 +37,7 @@ Enable Camp Administrators to register families and manage basic resources with 
 * **Abdullah:** Backend Development
 * **Emad:** Frontend Development
 * **Omar:** Testing & Quality Assurance
-
+Updated structure
 ---
 
 ## ⏩ What's Next? (Sprint 2)
