@@ -51,6 +51,18 @@
         </div>
 
         <!-- Resources Card -->
+         
+
+        <!-- Distributions Card -->
+        
+
+    <!-- Tables/Activities Placeholder -->
+    
+            <div class="space-y-4">
+                <!-- Activity Item -->
+                <div class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-zinc-800/50 rounded-2xl transition-all border border-transparent hover:border-slate-100 dark:hover:border-zinc-800">
+                 
+               
         <div class="group bg-white dark:bg-zinc-900 p-6 rounded-3xl border border-slate-200 dark:border-zinc-800 hover:border-amber-200 dark:hover:border-amber-500/30 transition-all duration-300">
             <div class="flex items-start justify-between mb-4">
                 <div class="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform">
@@ -99,6 +111,7 @@
             </div>
         </div>
 
+        
         <div class="bg-white dark:bg-zinc-900 p-8 rounded-3xl border border-slate-200 dark:border-zinc-800">
             <h3 class="text-xl font-bold tracking-tight mb-6 text-center lg:text-left">Quick Actions</h3>
             <div class="grid grid-cols-2 gap-4">
