@@ -4,10 +4,10 @@ A comprehensive system designed to help Camp Administrators manage family regist
 
 ## 🚀 Sprint 1: Foundation & Core Features
 **Status:** Completed & Merged ✅  
-**Timeline:** Feb 9, 2026 – Feb 20, 2026
+**Timeline:** Feb 15, 2026 – Feb 28, 2026
 
 ### 🎯 Sprint Goal
-Enable Camp Administrators to register families and manage basic resources with secure login access for all users.
+Enable Camp Administrators to register families  and establish the core structure of the Multi-Camp Management System.
 
 ### 🛠️ Key Features Implemented
 
@@ -15,11 +15,12 @@ Enable Camp Administrators to register families and manage basic resources with 
 * **Database:** Designed and migrated the `families` table.
 * **Backend:** Developed the Registration Controller with robust validation logic.
 * **Frontend:** Built a responsive registration form with client-side validation.
+#### 2. Multi-Camp Management (3 pts)
+* **Database:*: Designed and migrated the camps table.
 
-#### 2. User Authentication (3 pts)
-* **Security:** Implemented secure login functionality.
-* **Access Control:** Established session management and Role-Based Access Control (RBAC).
-* **UI:** Designed a clean and functional login interface.
+Backend: Implemented Camp Controller with full CRUD functionality.
+
+Frontend: Developed an admin interface for creating and managing camps.
 
 #### 3. Resource Management (2 pts)
 * **Logic:** Implemented core CRUD functionality for managing camp resources.

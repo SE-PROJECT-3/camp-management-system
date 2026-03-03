@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resources', function (Blueprint $table) {
+        Schema::create('camps', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('type');
-            $table->integer('quantity');
-            $table->foreignId('camp_id')->constrained()->cascadeOnDelete();
+            $table->string('location');
+            $table->integer('capacity');
+            $table->integer('families_count')->default(0);
+            $table->integer('resources_count')->default(0);
+            $table->integer('distributions_count')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resources');
+        Schema::dropIfExists('camps');
     }
 };
