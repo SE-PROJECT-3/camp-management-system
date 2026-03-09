@@ -13,7 +13,15 @@ Route::get('/', function () {
         'distributions_count' => \App\Models\Distribution::count(),
     ]);
 })->name('dashboard');
+Route::get('/reports', function () {
+    return view('reports.index');
+})->name('reports.index');
+Route::get('/attendance-reports', function () {
+    return view('reports.attendance');
+})->name('reports.attendance');
+Route::view('/aid-reports', 'reports.aid');
+Route::view('/family-aid-history', 'reports.family-aid-history');
 
 Route::resource('camps', CampController::class);
 Route::resource('families', FamilyController::class);
-Route::resource('distributions', DistributionController::class);
+
