@@ -10,10 +10,30 @@ class FamilyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $families = Family::all();
-        return view('family.index', compact('families'));
+        $query = Family::query();
+
+        // 🔍 Search by name
+        if ($request->filled('name')) {
+            $query->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        // 🏕 Filter by camp
+        if ($request->filled('camp_id')) {
+            $query->where('camp_id', $request->camp_id);
+        }
+
+        // ⭐ Filter by priority (status)
+        if ($request->filled('priority')) {
+            $query->where('priority', $request->priority);
+        }
+
+        $families = $query->get();
+
+        $camps = \App\Models\Camp::all();
+
+        return view('family.index', compact('families', 'camps'));
     }
 
     /**
@@ -21,8 +41,8 @@ class FamilyController extends Controller
      */
     public function create()
     {
-       $camps = \App\Models\Camp::all();
-       return view('family.create', compact('camps'));
+        $camps = \App\Models\Camp::all();
+        return view('family.create', compact('camps'));
     }
 
     /**
@@ -55,8 +75,8 @@ class FamilyController extends Controller
      */
     public function edit(Family $family)
     {
-      $camps = \App\Models\Camp::all();
-      return view('family.edit', compact('family', 'camps'));
+        $camps = \App\Models\Camp::all();
+        return view('family.edit', compact('family', 'camps'));
     }
 
     /**
