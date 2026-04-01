@@ -6,16 +6,22 @@ use App\Http\Controllers\FamilyController;
 use App\Http\Controllers\DistributionController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ReportController;
 
 Route::middleware('auth')->group(function () {
-Route::get('/', function () {
-    return view('dashboard', [
-        'camps_count' => \App\Models\Camp::count(),
-        'families_count' => \App\Models\Family::count(),
-        'distributions_count' => \App\Models\Distribution::count(),
-    ]);
-})->name('dashboard')->middleware('auth');
+    Route::get('/', function () {
+        return view('dashboard', [
+            'camps_count' => \App\Models\Camp::count(),
+            'families_count' => \App\Models\Family::count(),
+            'distributions_count' => \App\Models\Distribution::count(),
+        ]);
+    })->name('dashboard');
 
+    // Reports & Analytics
+    Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+    Route::get('/reports/attendance', [ReportController::class, 'attendance'])->name('reports.attendance');
+    Route::get('/reports/export-csv', [ReportController::class, 'exportCsv'])->name('reports.export-csv');
+    Route::get('/reports/export-pdf', [ReportController::class, 'exportPdf'])->name('reports.export-pdf');
 });
 
 
